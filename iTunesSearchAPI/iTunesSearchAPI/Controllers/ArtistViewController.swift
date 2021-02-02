@@ -14,20 +14,24 @@ class ArtistViewController: UIViewController {
     @IBOutlet weak var collectionName: UILabel!
     @IBOutlet weak var genre: UILabel!
     @IBOutlet weak var buyNow: UIButton!
+    @IBOutlet weak var longDescription: UITextView!
     
     var artistViewModel: ArtistViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadArtistViewController()
+        // Do any additional setup after loading the view.
+    }
+    
+    func loadArtistViewController() {
         artwork.load(url: (artistViewModel?.artworkUrl)!)
         trackName.text = artistViewModel?.artistName
         collectionName.text = artistViewModel?.collectionName
         genre.text = artistViewModel?.primaryGenreName
+        longDescription.text = artistViewModel?.longDescription
         buyNow.setTitle("\(artistViewModel!.currency) \(artistViewModel!.trackPrice)", for: .normal)
-        // Do any additional setup after loading the view.
     }
-    
-
     /*
     // MARK: - Navigation
 

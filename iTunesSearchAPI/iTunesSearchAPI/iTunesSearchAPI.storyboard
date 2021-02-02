@@ -138,6 +138,34 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbV-zP-zZz">
+                                <rect key="frame" x="16" y="288" width="343" height="257"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7B-k5-0er">
+                                        <rect key="frame" x="8" y="8" width="327" height="241"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="0pe-MJ-RGF"/>
+                                    <constraint firstAttribute="height" constant="257" id="yV7-iJ-Agx"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWz-Wb-dvj">
+                                <rect key="frame" x="28" y="249" width="169" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="ZPo-hH-21s"/>
+                                    <constraint firstAttribute="height" constant="24" id="h6L-wh-L6u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -145,9 +173,16 @@
                             <constraint firstItem="6ad-EI-6l9" firstAttribute="trailing" secondItem="Lpq-Ia-Noo" secondAttribute="trailing" constant="16" id="MEX-LK-Qcf"/>
                             <constraint firstItem="Lpq-Ia-Noo" firstAttribute="centerY" secondItem="lhg-Hc-xCE" secondAttribute="centerY" constant="-194" id="MZX-wk-PRr"/>
                             <constraint firstItem="Ote-07-C1l" firstAttribute="leading" secondItem="6ad-EI-6l9" secondAttribute="leading" constant="16" id="SYD-wR-VO8"/>
+                            <constraint firstItem="zWz-Wb-dvj" firstAttribute="leading" secondItem="6ad-EI-6l9" secondAttribute="leading" constant="28" id="VdE-io-PAu"/>
                             <constraint firstItem="Lpq-Ia-Noo" firstAttribute="top" secondItem="6ad-EI-6l9" secondAttribute="top" constant="46" id="Waq-FB-rah"/>
+                            <constraint firstItem="zWz-Wb-dvj" firstAttribute="top" secondItem="Lpq-Ia-Noo" secondAttribute="bottom" constant="36" id="Z2g-k3-JTb"/>
+                            <constraint firstItem="RbV-zP-zZz" firstAttribute="top" secondItem="zWz-Wb-dvj" secondAttribute="bottom" constant="15" id="jSx-PH-4mp"/>
                             <constraint firstItem="6ad-EI-6l9" firstAttribute="trailing" secondItem="Ote-07-C1l" secondAttribute="trailing" constant="16" id="kiq-ye-S4v"/>
+                            <constraint firstItem="6ad-EI-6l9" firstAttribute="trailing" secondItem="zWz-Wb-dvj" secondAttribute="trailing" constant="178" id="u6E-ne-dwJ"/>
+                            <constraint firstItem="RbV-zP-zZz" firstAttribute="leading" secondItem="6ad-EI-6l9" secondAttribute="leading" constant="16" id="uuK-9l-C7b"/>
                             <constraint firstItem="Lpq-Ia-Noo" firstAttribute="leading" secondItem="6ad-EI-6l9" secondAttribute="leading" constant="16" id="yDf-hZ-jcd"/>
+                            <constraint firstItem="zWz-Wb-dvj" firstAttribute="centerY" secondItem="lhg-Hc-xCE" secondAttribute="centerY" constant="-72.5" id="zgs-Fb-FQC"/>
+                            <constraint firstItem="6ad-EI-6l9" firstAttribute="trailing" secondItem="RbV-zP-zZz" secondAttribute="trailing" constant="16" id="zzb-vW-QSf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6ad-EI-6l9"/>
                     </view>
@@ -156,12 +191,13 @@
                         <outlet property="buyNow" destination="Ote-07-C1l" id="dSN-2O-AwJ"/>
                         <outlet property="collectionName" destination="RgH-u6-cPK" id="jYf-5v-7AF"/>
                         <outlet property="genre" destination="Up1-Jl-zv4" id="Uwh-EZ-aZ5"/>
+                        <outlet property="longDescription" destination="P7B-k5-0er" id="Cna-Ju-A6m"/>
                         <outlet property="trackName" destination="wf2-tT-iZJ" id="cPk-gv-Hih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwI-yL-qg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="661.60000000000002" y="80.50974512743629"/>
+            <point key="canvasLocation" x="653.60000000000002" y="80.50974512743629"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ydO-gZ-Iqp">
