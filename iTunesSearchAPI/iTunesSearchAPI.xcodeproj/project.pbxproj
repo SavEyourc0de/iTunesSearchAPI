@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6CE909371FB1DADC6DC00175 /* libPods-iTunesSearchAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E08C00C071D708C7184E1C7 /* libPods-iTunesSearchAPI.a */; };
+		E12808E625C9C94C0007C1F2 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12808E525C9C94C0007C1F2 /* ArtistViewController.swift */; };
 		E1877DC225C961E00087F873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1877DC125C961E00087F873 /* AppDelegate.swift */; };
 		E1877DC925C961E20087F873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1877DC825C961E20087F873 /* Assets.xcassets */; };
 		E1877DCC25C961E20087F873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1877DCA25C961E20087F873 /* LaunchScreen.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		6E08C00C071D708C7184E1C7 /* libPods-iTunesSearchAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iTunesSearchAPI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BF58933E9B81D5E83821E5 /* Pods-iTunesSearchAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesSearchAPI.release.xcconfig"; path = "Target Support Files/Pods-iTunesSearchAPI/Pods-iTunesSearchAPI.release.xcconfig"; sourceTree = "<group>"; };
+		E12808E525C9C94C0007C1F2 /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		E1877DBE25C961E00087F873 /* iTunesSearchAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearchAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1877DC125C961E00087F873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1877DC825C961E20087F873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B2FD9A25C9629B00667077 /* mainViewController.swift */,
+				E12808E525C9C94C0007C1F2 /* ArtistViewController.swift */,
 				E1B2FD9F25C968AB00667077 /* tableViewCell */,
 			);
 			path = Controllers;
@@ -247,6 +250,7 @@
 				E1877DC225C961E00087F873 /* AppDelegate.swift in Sources */,
 				E1B2FDA725C9744E00667077 /* ArtistItem.swift in Sources */,
 				E1B2FDA925C9773F00667077 /* ArtistModel.swift in Sources */,
+				E12808E625C9C94C0007C1F2 /* ArtistViewController.swift in Sources */,
 				E1B2FDAC25C97E9A00667077 /* UIImageView.swift in Sources */,
 				E1B2FDAE25C9833800667077 /* ArtistViewModel.swift in Sources */,
 				E1B2FD9B25C9629B00667077 /* mainViewController.swift in Sources */,
