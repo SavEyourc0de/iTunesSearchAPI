@@ -16,7 +16,10 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
                   "country":"au",
                   "media":"movie",
                   "all":""]
+
+    var artistViewController: ArtistViewController!
     var data: [ArtistItem] = []
+    var artistViewModel: ArtistViewModel?
 
     @IBOutlet weak var tableView: UITableView!
     let test = ["one","two","three"]
@@ -26,8 +29,15 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         initTableView()
         loadTableViewCell()
         requestiTunesData()
-
+        loadArtistViewController()
+        
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        showHideNavigationBar(show: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        showHideNavigationBar(show: false)
     }
     
     // MARK: - Navigation
@@ -48,6 +58,12 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.albumArtwork.load(url: data[indexPath.row].artworkUrl)
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        loadArtistViewController(artistItem: data[indexPath.row])
+        artistViewController.artistViewModel = artistViewModel
+
+        self.navigationController?.pushViewController(artistViewController, animated: true)
+    }
     func initTableView(){
         tableView.delegate = self
         tableView.dataSource = self
@@ -60,5 +76,14 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.tableView.reloadData()
             } else {}
         }
+    }
+    func loadArtistViewController(){
+        artistViewController = storyboard?.instantiateViewController(withIdentifier: "ArtistViewController") as? ArtistViewController
+    }
+    func loadArtistViewController(artistItem: ArtistItem){
+        artistViewModel = (ArtistViewModel(trackId: artistItem.trackId, artistName: artistItem.artistName, collectionName: artistItem.collectionName, trackName: artistItem.trackName, artworkUrl: artistItem.artworkUrl, trackPrice: artistItem.trackPrice, releaseDate: artistItem.releaseDate, currency: artistItem.currency, primaryGenreName: artistItem.primaryGenreName, longDescription: artistItem.longDescription))
+    }
+    func showHideNavigationBar(show: Bool){
+        navigationController?.isNavigationBarHidden = show
     }
 }

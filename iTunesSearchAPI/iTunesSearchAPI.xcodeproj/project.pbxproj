@@ -19,6 +19,7 @@
 		E1B2FDA925C9773F00667077 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2FDA825C9773F00667077 /* ArtistModel.swift */; };
 		E1B2FDAC25C97E9A00667077 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2FDAB25C97E9A00667077 /* UIImageView.swift */; };
 		E1B2FDAE25C9833800667077 /* ArtistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2FDAD25C9833800667077 /* ArtistViewModel.swift */; };
+		E1B2FDB025C984F400667077 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2FDAF25C984F400667077 /* ArtistViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		E1B2FDA825C9773F00667077 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
 		E1B2FDAB25C97E9A00667077 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E1B2FDAD25C9833800667077 /* ArtistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewModel.swift; sourceTree = "<group>"; };
+		E1B2FDAF25C984F400667077 /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		EFD994EEEADE8789F5D6B333 /* Pods-iTunesSearchAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesSearchAPI.debug.xcconfig"; path = "Target Support Files/Pods-iTunesSearchAPI/Pods-iTunesSearchAPI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B2FD9A25C9629B00667077 /* mainViewController.swift */,
+				E1B2FDAF25C984F400667077 /* ArtistViewController.swift */,
 				E1B2FD9F25C968AB00667077 /* tableViewCell */,
 			);
 			path = Controllers;
@@ -247,6 +250,7 @@
 				E1877DC225C961E00087F873 /* AppDelegate.swift in Sources */,
 				E1B2FDA725C9744E00667077 /* ArtistItem.swift in Sources */,
 				E1B2FDA925C9773F00667077 /* ArtistModel.swift in Sources */,
+				E1B2FDB025C984F400667077 /* ArtistViewController.swift in Sources */,
 				E1B2FDAC25C97E9A00667077 /* UIImageView.swift in Sources */,
 				E1B2FDAE25C9833800667077 /* ArtistViewModel.swift in Sources */,
 				E1B2FD9B25C9629B00667077 /* mainViewController.swift in Sources */,
