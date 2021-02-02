@@ -19,7 +19,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xqH-19-3PO">
-                        <rect key="frame" x="227" y="0.0" width="144" height="106.5"/>
+                        <rect key="frame" x="274" y="0.0" width="97" height="107"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="97" id="EsH-fw-839"/>
+                            <constraint firstAttribute="height" constant="107" id="NHh-78-yil"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czk-8j-LHv">
                         <rect key="frame" x="0.0" y="0.0" width="219" height="48"/>
@@ -53,20 +57,17 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="xqH-19-3PO" secondAttribute="trailing" id="02i-pm-9S9"/>
                     <constraint firstItem="fWp-9V-CX5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3OR-w2-Uj8"/>
-                    <constraint firstItem="xqH-19-3PO" firstAttribute="leading" secondItem="y8f-b4-r7i" secondAttribute="trailing" constant="8" id="6mv-Ck-IQc"/>
+                    <constraint firstAttribute="bottom" secondItem="xqH-19-3PO" secondAttribute="bottom" constant="-0.5" id="3rf-uC-Xci"/>
                     <constraint firstItem="czk-8j-LHv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="G2X-Pg-Nq6"/>
+                    <constraint firstItem="xqH-19-3PO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="TBn-fJ-kLf"/>
                     <constraint firstAttribute="bottom" secondItem="fWp-9V-CX5" secondAttribute="bottom" constant="18.5" id="WfL-xR-EtO"/>
                     <constraint firstItem="fWp-9V-CX5" firstAttribute="top" secondItem="y8f-b4-r7i" secondAttribute="bottom" constant="8" id="eLC-mb-EEQ"/>
-                    <constraint firstAttribute="trailing" secondItem="xqH-19-3PO" secondAttribute="trailing" id="hrr-cw-JCo"/>
                     <constraint firstItem="y8f-b4-r7i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="iX3-Qw-rt0"/>
                     <constraint firstItem="y8f-b4-r7i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="44" id="lN9-Vk-ZIu"/>
-                    <constraint firstItem="xqH-19-3PO" firstAttribute="leading" secondItem="fWp-9V-CX5" secondAttribute="trailing" constant="111" id="lbK-bx-ddy"/>
                     <constraint firstItem="fWp-9V-CX5" firstAttribute="top" secondItem="y8f-b4-r7i" secondAttribute="bottom" constant="8" id="tOn-Zr-r35"/>
-                    <constraint firstAttribute="bottom" secondItem="xqH-19-3PO" secondAttribute="bottom" id="uvu-mF-S2B"/>
-                    <constraint firstItem="xqH-19-3PO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vbq-eO-wnw"/>
                     <constraint firstItem="czk-8j-LHv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wdy-IN-bro"/>
-                    <constraint firstItem="xqH-19-3PO" firstAttribute="leading" secondItem="czk-8j-LHv" secondAttribute="trailing" constant="8" id="xnK-di-FPb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

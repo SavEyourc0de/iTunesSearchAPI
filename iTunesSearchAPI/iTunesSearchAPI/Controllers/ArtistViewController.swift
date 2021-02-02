@@ -22,7 +22,7 @@ class ArtistViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadData()
+        loadData()
     }
     
     func loadData() {
