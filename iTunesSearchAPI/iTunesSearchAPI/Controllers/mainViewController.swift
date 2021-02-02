@@ -16,6 +16,7 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
                   "country":"au",
                   "media":"movie",
                   "all":""]
+    var data: [ArtistItem] = []
 
     @IBOutlet weak var tableView: UITableView!
     let test = ["one","two","three"]
@@ -44,13 +45,16 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return test.count
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! customCell
 
-        cell.artistName.text = test[indexPath.row]
+        cell.artistName.text = data[indexPath.row].artistName
+        cell.trackName.text = data[indexPath.row].trackName
+        cell.price.text = "\(data[indexPath.row].currency) \(data[indexPath.row].trackPrice)"
+        cell.albumArtwork.load(url: data[indexPath.row].artworkUrl)
         return cell
     }
     func initTableView(){
@@ -60,6 +64,9 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func requestiTunesData(){
         Alamofire.request(baseURL, method: .get, parameters: params).responseJSON { response in
             if (response.result.isSuccess) {
+                let json = JSON(response.result.value)
+                self.data = ArtistModel(json: json).artistItems
+                self.tableView.reloadData()
             } else {}
         }
     }

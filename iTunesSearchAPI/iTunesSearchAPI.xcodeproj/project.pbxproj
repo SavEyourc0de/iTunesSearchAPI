@@ -15,6 +15,9 @@
 		E1B2FD9D25C963F400667077 /* iTunesSearchAPI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B2FD9C25C963F400667077 /* iTunesSearchAPI.storyboard */; };
 		E1B2FDA225C968D800667077 /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2FDA025C968D800667077 /* customCell.swift */; };
 		E1B2FDA325C968D800667077 /* customCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B2FDA125C968D800667077 /* customCell.xib */; };
+		E1B2FDA725C9744E00667077 /* ArtistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2FDA625C9744E00667077 /* ArtistItem.swift */; };
+		E1B2FDA925C9773F00667077 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2FDA825C9773F00667077 /* ArtistModel.swift */; };
+		E1B2FDAC25C97E9A00667077 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2FDAB25C97E9A00667077 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		E1B2FD9C25C963F400667077 /* iTunesSearchAPI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iTunesSearchAPI.storyboard; sourceTree = "<group>"; };
 		E1B2FDA025C968D800667077 /* customCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
 		E1B2FDA125C968D800667077 /* customCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = customCell.xib; sourceTree = "<group>"; };
+		E1B2FDA625C9744E00667077 /* ArtistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistItem.swift; sourceTree = "<group>"; };
+		E1B2FDA825C9773F00667077 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
+		E1B2FDAB25C97E9A00667077 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		EFD994EEEADE8789F5D6B333 /* Pods-iTunesSearchAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesSearchAPI.debug.xcconfig"; path = "Target Support Files/Pods-iTunesSearchAPI/Pods-iTunesSearchAPI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,9 +88,10 @@
 		E1877DC025C961E00087F873 /* iTunesSearchAPI */ = {
 			isa = PBXGroup;
 			children = (
+				E1B2FDAA25C97E8800667077 /* Extensions */,
 				E1877DC125C961E00087F873 /* AppDelegate.swift */,
+				E1B2FDA425C9743200667077 /* Models */,
 				E1B2FD9E25C9687700667077 /* Controllers */,
-				E1B2FD9A25C9629B00667077 /* mainViewController.swift */,
 				E1B2FD9C25C963F400667077 /* iTunesSearchAPI.storyboard */,
 				E1877DC825C961E20087F873 /* Assets.xcassets */,
 				E1877DCA25C961E20087F873 /* LaunchScreen.storyboard */,
@@ -96,6 +103,7 @@
 		E1B2FD9E25C9687700667077 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E1B2FD9A25C9629B00667077 /* mainViewController.swift */,
 				E1B2FD9F25C968AB00667077 /* tableViewCell */,
 			);
 			path = Controllers;
@@ -108,6 +116,31 @@
 				E1B2FDA125C968D800667077 /* customCell.xib */,
 			);
 			path = tableViewCell;
+			sourceTree = "<group>";
+		};
+		E1B2FDA425C9743200667077 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E1B2FDA525C9743F00667077 /* Items */,
+				E1B2FDA825C9773F00667077 /* ArtistModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E1B2FDA525C9743F00667077 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				E1B2FDA625C9744E00667077 /* ArtistItem.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		E1B2FDAA25C97E8800667077 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1B2FDAB25C97E9A00667077 /* UIImageView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1877DC225C961E00087F873 /* AppDelegate.swift in Sources */,
+				E1B2FDA725C9744E00667077 /* ArtistItem.swift in Sources */,
+				E1B2FDA925C9773F00667077 /* ArtistModel.swift in Sources */,
+				E1B2FDAC25C97E9A00667077 /* UIImageView.swift in Sources */,
 				E1B2FD9B25C9629B00667077 /* mainViewController.swift in Sources */,
 				E1B2FDA225C968D800667077 /* customCell.swift in Sources */,
 			);
