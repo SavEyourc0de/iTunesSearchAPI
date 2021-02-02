@@ -13,6 +13,8 @@
 		E1877DCC25C961E20087F873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1877DCA25C961E20087F873 /* LaunchScreen.storyboard */; };
 		E1B2FD9B25C9629B00667077 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2FD9A25C9629B00667077 /* mainViewController.swift */; };
 		E1B2FD9D25C963F400667077 /* iTunesSearchAPI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B2FD9C25C963F400667077 /* iTunesSearchAPI.storyboard */; };
+		E1B2FDA225C968D800667077 /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2FDA025C968D800667077 /* customCell.swift */; };
+		E1B2FDA325C968D800667077 /* customCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B2FDA125C968D800667077 /* customCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		E1877DCD25C961E20087F873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1B2FD9A25C9629B00667077 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		E1B2FD9C25C963F400667077 /* iTunesSearchAPI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iTunesSearchAPI.storyboard; sourceTree = "<group>"; };
+		E1B2FDA025C968D800667077 /* customCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
+		E1B2FDA125C968D800667077 /* customCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = customCell.xib; sourceTree = "<group>"; };
 		EFD994EEEADE8789F5D6B333 /* Pods-iTunesSearchAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesSearchAPI.debug.xcconfig"; path = "Target Support Files/Pods-iTunesSearchAPI/Pods-iTunesSearchAPI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,7 +58,6 @@
 				EFD994EEEADE8789F5D6B333 /* Pods-iTunesSearchAPI.debug.xcconfig */,
 				B5BF58933E9B81D5E83821E5 /* Pods-iTunesSearchAPI.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E1877DC125C961E00087F873 /* AppDelegate.swift */,
+				E1B2FD9E25C9687700667077 /* Controllers */,
 				E1B2FD9A25C9629B00667077 /* mainViewController.swift */,
 				E1B2FD9C25C963F400667077 /* iTunesSearchAPI.storyboard */,
 				E1877DC825C961E20087F873 /* Assets.xcassets */,
@@ -87,6 +91,23 @@
 				E1877DCD25C961E20087F873 /* Info.plist */,
 			);
 			path = iTunesSearchAPI;
+			sourceTree = "<group>";
+		};
+		E1B2FD9E25C9687700667077 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1B2FD9F25C968AB00667077 /* tableViewCell */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E1B2FD9F25C968AB00667077 /* tableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E1B2FDA025C968D800667077 /* customCell.swift */,
+				E1B2FDA125C968D800667077 /* customCell.xib */,
+			);
+			path = tableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +171,7 @@
 			files = (
 				E1877DCC25C961E20087F873 /* LaunchScreen.storyboard in Resources */,
 				E1B2FD9D25C963F400667077 /* iTunesSearchAPI.storyboard in Resources */,
+				E1B2FDA325C968D800667077 /* customCell.xib in Resources */,
 				E1877DC925C961E20087F873 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +210,7 @@
 			files = (
 				E1877DC225C961E00087F873 /* AppDelegate.swift in Sources */,
 				E1B2FD9B25C9629B00667077 /* mainViewController.swift in Sources */,
+				E1B2FDA225C968D800667077 /* customCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

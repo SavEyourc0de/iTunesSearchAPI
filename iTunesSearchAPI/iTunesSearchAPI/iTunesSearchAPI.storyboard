@@ -16,13 +16,37 @@
                     <view key="view" contentMode="scaleToFill" id="FTM-IB-lQr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kd2-dL-BGA">
+                                <rect key="frame" x="10" y="83" width="355" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJB-lu-k8M">
+                                <rect key="frame" x="286" y="35" width="73" height="30"/>
+                                <state key="normal" title="Search"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hAu-v5-Yp6" firstAttribute="trailing" secondItem="DJB-lu-k8M" secondAttribute="trailing" constant="16" id="5cm-fY-35q"/>
+                            <constraint firstItem="kd2-dL-BGA" firstAttribute="centerY" secondItem="FTM-IB-lQr" secondAttribute="centerY" constant="36.5" id="7Ac-L1-Zq7"/>
+                            <constraint firstItem="kd2-dL-BGA" firstAttribute="centerX" secondItem="FTM-IB-lQr" secondAttribute="centerX" id="9u0-TM-nyn"/>
+                            <constraint firstItem="DJB-lu-k8M" firstAttribute="leading" secondItem="hAu-v5-Yp6" secondAttribute="leading" constant="286" id="C8d-hp-POg"/>
+                            <constraint firstItem="kd2-dL-BGA" firstAttribute="top" secondItem="DJB-lu-k8M" secondAttribute="bottom" constant="18" id="Hps-O4-MvK"/>
+                            <constraint firstItem="hAu-v5-Yp6" firstAttribute="bottom" secondItem="kd2-dL-BGA" secondAttribute="bottom" constant="10" id="Kv6-vM-kbS"/>
+                            <constraint firstItem="DJB-lu-k8M" firstAttribute="top" secondItem="hAu-v5-Yp6" secondAttribute="top" constant="15" id="QEp-iD-rB6"/>
+                            <constraint firstItem="kd2-dL-BGA" firstAttribute="leading" secondItem="hAu-v5-Yp6" secondAttribute="leading" constant="10" id="rbB-76-BRA"/>
+                            <constraint firstItem="hAu-v5-Yp6" firstAttribute="trailing" secondItem="kd2-dL-BGA" secondAttribute="trailing" constant="10" id="yJ7-xV-ZGO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hAu-v5-Yp6"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="kd2-dL-BGA" id="6b5-ct-xOI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKL-q8-Ir0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-591" y="243"/>
+            <point key="canvasLocation" x="-530.39999999999998" y="241.52923538230885"/>
         </scene>
     </scenes>
 </document>
