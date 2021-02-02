@@ -11,16 +11,21 @@ import Alamofire
 import SwiftyJSON
 
 class mainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    let baseURL = "https://itunes.apple.com/search?"
+    let params = ["term":"moon",
+                  "country":"au",
+                  "media":"movie",
+                  "all":""]
 
     @IBOutlet weak var tableView: UITableView!
     let test = ["one","two","three"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initTableView()
         loadTableViewCell()
-        tableView.delegate = self
-        tableView.dataSource = self
+        requestiTunesData()
+
         // Do any additional setup after loading the view.
     }
     
@@ -48,6 +53,14 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.artistName.text = test[indexPath.row]
         return cell
     }
-    
-
+    func initTableView(){
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    func requestiTunesData(){
+        Alamofire.request(baseURL, method: .get, parameters: params).responseJSON { response in
+            if (response.result.isSuccess) {
+            } else {}
+        }
+    }
 }
