@@ -1,5 +1,7 @@
 target 'iTunesSearchAPI' do
 pod 'Alamofire', '<4.1'
 pod 'SwiftyJSON', '<4.1'
+pod 'RealmSwift', '<4.1', :modular_headers => true
+pod 'Realm', '<4.1', :modular_headers => true
 
 end

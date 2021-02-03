@@ -9,8 +9,10 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class mainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let realm = try! Realm()
     let baseURL = "https://itunes.apple.com/search?"
     let params = ["term":"moon",
                   "country":"au",
@@ -24,7 +26,7 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadViewController()
+        realmData()
         initTableView()
         loadTableViewCell()
         requestiTunesData()
@@ -78,7 +80,14 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
             } else {}
         }
     }
-    func loadViewController(){
+    func realmData() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "ArtistViewController") as! ArtistViewController
+        
+        guard let data = realm.objects(ArtistViewModelRealm.self).first else { return }
+
+        artistViewmodel = ArtistViewModel(trackId: 0.0, artistName: data.artistName!, collectionName: data.collectionName ?? "", trackName: data.trackName ?? "", artworkUrl: URL(string: data.artworkUrl!)!, trackPrice: data.trackPrice, releaseDate: data.releaseDate ?? "", currency: data.currency!, primaryGenreName: data.primaryGenreName!, longDescription: data.longDescription!)
+
+        vc.artistViewModel = artistViewmodel
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
