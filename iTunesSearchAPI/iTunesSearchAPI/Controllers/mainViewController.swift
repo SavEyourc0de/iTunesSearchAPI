@@ -11,10 +11,11 @@ import Alamofire
 import SwiftyJSON
 import RealmSwift
 
-class mainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class mainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, searchPopupViewDelegate {
+    
     let realm = try! Realm()
     let baseURL = "https://itunes.apple.com/search?"
-    let params = ["term":"moon",
+    var params = ["term":"moon",
                   "country":"au",
                   "media":"movie",
                   "all":""]
@@ -77,7 +78,8 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.data = ArtistModel(json: json).artistItems
                 self.tableView.reloadData()
 
-            } else {}
+            } else {
+            }
         }
     }
     func realmData() {
@@ -89,5 +91,18 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         vc.artistViewModel = artistViewmodel
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    @IBAction func searchArtist(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SearchPopupView") as! SearchPopupView
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
+    }
+    func didTapSearch(data: String) {
+        params = ["term":data,
+                  "country":"au",
+                  "media":"movie",
+                  "all":""]
+        requestiTunesData()
+        tableView.reloadData()
     }
 }

@@ -27,7 +27,7 @@ class ArtistModel {
             let primaryGenreName = item["primaryGenreName"].stringValue
             let longDescription = item["longDescription"].stringValue
 
-            artistItems.append(ArtistItem(trackId: trackId, artistName: artistName, collectionName: collectionName, trackName: trackName, artworkUrl: artworkUrl, trackPrice: trackPrice, releaseDate: releaseDate, currency: currency, primaryGenreName: primaryGenreName, longDescription: longDescription))
+            artistItems.append(ArtistItem(trackId: trackId, artistName: artistName, collectionName: collectionName, trackName: trackName, artworkUrl: artworkUrl, trackPrice: abs(trackPrice), releaseDate: releaseDate, currency: currency, primaryGenreName: primaryGenreName, longDescription: longDescription))
         }
     }
 }
