@@ -85,7 +85,7 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     // MARK: LOAD REALM
     //Load data from REALM
-    //IF Empty/NIL return otherwise Transition to previous Artist View(after the app was closed)
+    //IF Empty/NIL return otherwise Transition to previous Artist View(after the app was closed) while not in the main view
     func realmData() {
         let vc = storyboard?.instantiateViewController(withIdentifier: Identifiers.VIEWCONTROLLERS.ARTISTVIEWCONTROLLER) as! ArtistViewController
         
@@ -103,6 +103,8 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
+    // MARK: Delegate function triggers upon tapping search in SearhPopupView
+    // Replaces value to data from of key `term`
     func didTapSearch(data: String) {
         params = [API_CONSTANTS.PARAMETERS.TERM:data,
                   API_CONSTANTS.PARAMETERS.COUNTRY.KEY:API_CONSTANTS.PARAMETERS.COUNTRY.VALUE,

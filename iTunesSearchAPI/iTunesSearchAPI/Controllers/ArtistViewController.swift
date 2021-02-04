@@ -26,6 +26,7 @@ class ArtistViewController: UIViewController {
         super.viewDidLoad()
         loadData()
     }
+    // Mark: Load Data to View
     func loadData() {
         artwork.load(url: ((artistViewModel?.artworkUrl)?.absoluteURL)!)
         artistName.text = (artistViewModel?.artistName)!
@@ -40,6 +41,10 @@ class ArtistViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         deleteRealmData()
     }
+    // Mark: -Store REALM data from `artistViewModel`
+    // This is key so:
+    //      1) when app is closed there is data stored in Realm
+    //      2) upon opening the app again will check if there is existing data then proceeds to artist view otherwise will start the app normally
     func loadRealmData(){
         artistRealmModel.artworkUrl = artistViewModel?.artworkUrl.absoluteString
         artistRealmModel.artistName = artistViewModel?.artistName
@@ -52,32 +57,20 @@ class ArtistViewController: UIViewController {
         do {
             try realm.write {
                 realm.add(artistRealmModel)
-
-                //UserDefaults.standard.set(true, forKey: "localData")
             }
         } catch {
             print("error:\(error)")
         }
     }
+    // Mark: -Delete Realm Data
+    // removes all data from Realm so upon opening the app, it wont transition to this view.
     func deleteRealmData(){
         do {
             try realm.write {
                 realm.deleteAll()
-
-                //UserDefaults.standard.set(false, forKey: "localData")
             }
         } catch {
             print("error:\(error)")
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
