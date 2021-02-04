@@ -14,10 +14,9 @@ import RealmSwift
 class mainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, searchPopupViewDelegate {
     
     let realm = try! Realm()
-    let baseURL = "https://itunes.apple.com/search?"
-    var params = ["term":"moon",
-                  "country":"au",
-                  "media":"movie",
+    var params = [API_CONSTANTS.PARAMETERS.TERM:"moon",
+                  API_CONSTANTS.PARAMETERS.COUNTRY.KEY:API_CONSTANTS.PARAMETERS.COUNTRY.VALUE,
+                  API_CONSTANTS.PARAMETERS.MEDIA.KEY:API_CONSTANTS.PARAMETERS.MEDIA.VALUE,
                   "all":""]
     var data: [ArtistItem] = []
     var artistViewmodel: ArtistViewModel?
@@ -47,14 +46,14 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
     }
     func loadTableViewCell(){
-        tableView.register(UINib(nibName: "customCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        tableView.register(UINib(nibName: Identifiers.CUSTOM_CELL.MAIN_TABLEVIEW_CUSTOMCELL, bundle: nil), forCellReuseIdentifier: Identifiers.CUSTOM_CELL.MAIN_TABLEVIEW_CUSTOMCELL)
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! customCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.CUSTOM_CELL.MAIN_TABLEVIEW_CUSTOMCELL, for: indexPath) as! customCell
 
         cell.artistName.text = data[indexPath.row].artistName
         cell.trackName.text = data[indexPath.row].trackName
@@ -63,7 +62,7 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ArtistViewController") as! ArtistViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: Identifiers.VIEWCONTROLLERS.ARTISTVIEWCONTROLLER) as! ArtistViewController
 
         artistViewmodel = ArtistViewModel(trackId: data[indexPath.row].trackId, artistName: data[indexPath.row].artistName, collectionName: data[indexPath.row].collectionName, trackName: data[indexPath.row].trackName, artworkUrl: data[indexPath.row].artworkUrl, trackPrice: data[indexPath.row].trackPrice, releaseDate: data[indexPath.row].releaseDate, currency: data[indexPath.row].currency, primaryGenreName: data[indexPath.row].primaryGenreName, longDescription: data[indexPath.row].longDescription)
     
@@ -72,18 +71,19 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     // Mark: - Request Data
     func requestiTunesData(){
-        Alamofire.request(baseURL, method: .get, parameters: params).responseJSON { response in
+        Alamofire.request(API_CONSTANTS.URL.BASE_URL, method: .get, parameters: params).responseJSON { response in
             if (response.result.isSuccess) {
                 let json = JSON(response.result.value)
                 self.data = ArtistModel(json: json).artistItems
                 self.tableView.reloadData()
 
             } else {
+                print(response.result.error)
             }
         }
     }
     func realmData() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ArtistViewController") as! ArtistViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: Identifiers.VIEWCONTROLLERS.ARTISTVIEWCONTROLLER) as! ArtistViewController
         
         guard let data = realm.objects(ArtistViewModelRealm.self).first else { return }
 
@@ -93,14 +93,14 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func searchArtist(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "SearchPopupView") as! SearchPopupView
+        let vc = storyboard?.instantiateViewController(withIdentifier: Identifiers.VIEWCONTROLLERS.SEARCH_POPUPVIEW) as! SearchPopupView
         vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
     func didTapSearch(data: String) {
-        params = ["term":data,
-                  "country":"au",
-                  "media":"movie",
+        params = [API_CONSTANTS.PARAMETERS.TERM:data,
+                  API_CONSTANTS.PARAMETERS.COUNTRY.KEY:API_CONSTANTS.PARAMETERS.COUNTRY.VALUE,
+                  API_CONSTANTS.PARAMETERS.MEDIA.KEY:API_CONSTANTS.PARAMETERS.MEDIA.VALUE,
                   "all":""]
         requestiTunesData()
         tableView.reloadData()
