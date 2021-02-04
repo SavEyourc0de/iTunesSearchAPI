@@ -30,9 +30,10 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         initTableView()
         loadTableViewCell()
         requestiTunesData()
-
-        // Do any additional setup after loading the view.
     }
+    
+    // MARK: - Remove Navigation Bar
+    //Hide navigation bar upon viewing screen, enable upon dissappear
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
@@ -40,7 +41,7 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationController?.isNavigationBarHidden = false
     }
     
-    // MARK: - TableView
+    // MARK: - TableView: Load TableView
     func initTableView(){
         tableView.delegate = self
         tableView.dataSource = self
@@ -69,7 +70,7 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         vc.artistViewModel = artistViewmodel
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    // Mark: - Request Data
+    // Mark: - Request Data -- Load Data
     func requestiTunesData(){
         Alamofire.request(API_CONSTANTS.URL.BASE_URL, method: .get, parameters: params).responseJSON { response in
             if (response.result.isSuccess) {
@@ -82,6 +83,9 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
+    // MARK: LOAD REALM
+    //Load data from REALM
+    //IF Empty/NIL return otherwise Transition to previous Artist View(after the app was closed)
     func realmData() {
         let vc = storyboard?.instantiateViewController(withIdentifier: Identifiers.VIEWCONTROLLERS.ARTISTVIEWCONTROLLER) as! ArtistViewController
         
@@ -92,6 +96,8 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         vc.artistViewModel = artistViewmodel
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    // MARK: SearchArtist
+    //after search reload tableview container related search data
     @IBAction func searchArtist(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: Identifiers.VIEWCONTROLLERS.SEARCH_POPUPVIEW) as! SearchPopupView
         vc.delegate = self
